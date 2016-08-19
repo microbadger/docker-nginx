@@ -5,12 +5,12 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/thynx/nginx.svg)](https://hub.docker.com/r/thynx/nginx/)
 [![Docker Build](https://img.shields.io/docker/automated/thynx/nginx.svg)](https://hub.docker.com/r/thynx/nginx/)
 
-# thynx/nginx:1.10.1
+# thynx/nginx:1.11.0
 
 ## Tags:
 ```
 latest: 1, 1.11, 1.11.1
-stable: 1.10, 1.10.1
+stable: 1.10, 1.11.0
 ```
 
 ## Info:
