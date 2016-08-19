@@ -2,7 +2,7 @@ FROM alpine:3.4
 
 MAINTAINER "Silas Rech" <silas@thynx.io>
 
-ENV NGX_VERSION=1.11.0 \
+ENV NGX_VERSION=1.11.1 \
     NGX_GPG_KEY=B0F4253373F8F6F510D42178520A9993A1C052F8 \
     NGX_CONFIG="\
   	--prefix=/etc/nginx \
@@ -82,7 +82,7 @@ RUN \
 	&& rm cors.tar.gz \
 	&& cd /usr/src/nginx-$NGX_VERSION \
 	&& sed -i -e 's/"Server: nginx"/"Server: Bolt ϟ"/g' src/http/ngx_http_header_filter_module.c \
-	&& sed -i -e 's/"Server: " NGINX_VER CRLF/"Server: Bolt ϟ \/ 1.11.0" CRLF/g' src/http/ngx_http_header_filter_module.c \
+	&& sed -i -e 's/"Server: " NGINX_VER CRLF/"Server: Bolt ϟ \/ 1.11.1" CRLF/g' src/http/ngx_http_header_filter_module.c \
 	&& ./configure $NGX_CONFIG \
 	&& make \
 	&& make install \
