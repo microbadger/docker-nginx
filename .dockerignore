@@ -1,0 +1,7 @@
+Dockerfile
+.dockerignore
+readme.md
+changelog.md
+license.md
+version
+logo.svg
