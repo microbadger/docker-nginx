@@ -103,7 +103,7 @@ RUN \
 	&& rm cors.tar.gz \
 	&& cd /usr/src/nginx-${NGX_VERSION} \
 	&& sed -i -e 's/"Server: nginx"/"Server: Bolt ϟ"/g' src/http/ngx_http_header_filter_module.c \
-	&& sed -i -e 's/"Server: " NGINX_VER CRLF/"Server: Bolt ϟ \/ ${NGX_VERSION}" CRLF/g' src/http/ngx_http_header_filter_module.c \
+	&& sed -i -e "s/\"Server: \" NGINX_VER CRLF/\"Server: Bolt ϟ \/ ${NGX_VERSION}\" CRLF/g" src/http/ngx_http_header_filter_module.c \
 	&& ./configure ${NGX_CONFIG} >/dev/null \
 	&& echo "Configured NGINX v${NGX_VERSION}" \
 	&& make >/dev/null \
@@ -114,8 +114,8 @@ RUN \
 	&& mkdir /etc/nginx/conf.d/ \
 	&& mkdir -p /usr/share/nginx/html/ \
 	&& cd / \
-	&& sed -i -e 's/NGX_VERSION/${NGX_VERSION}/g' /usr/src/bolt/index.html \
-	&& sed -i -e 's/NGX_VERSION/${NGX_VERSION}/g' /usr/src/bolt/error.html \
+	&& sed -i -e "s/NGX_VERSION/${NGX_VERSION}/g" /usr/src/bolt/index.html \
+	&& sed -i -e "s/NGX_VERSION/${NGX_VERSION}/g" /usr/src/bolt/error.html \
 	&& install -m644 /usr/src/bolt/index.html /usr/share/nginx/html/ \
 	&& install -m644 /usr/src/bolt/error.html /usr/share/nginx/html/ \
 	&& install -m644 /usr/src/bolt/nginx.conf /etc/nginx/ \
