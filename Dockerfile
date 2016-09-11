@@ -64,8 +64,8 @@ ENV NGX_VERSION=1.11.3 \
 COPY * /usr/src/bolt/
 
 RUN \
-  addgroup -S nginx \
-  && adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx nginx \
+  addgroup -g 82 -S nginx \
+  && adduser -u 82 -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx nginx \
   && apk -q add --no-cache --virtual .build-deps ${BUILD_DEPENDENCIES} \
   && echo "Downloaded build dependencies" \
   && curl -fSLs https://nginx.org/download/nginx-${NGX_VERSION}.tar.gz -o nginx.tar.gz \
